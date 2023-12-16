@@ -13,12 +13,12 @@ jobs:
       with:
         token: ${{ secrets.REPOSITORY_B_TOKEN }}
     - name: Check if Commit Message Contains '[test]'
-#      if : "contains(github.event.head_commit.message, '[test]')"
+      if : "contains(github.event.head_commit.message, '[test]')"
       run : |
           echo "[LOG] It contains [test], will update to other repo"
           #cd ./test
           echo "[LOG] Cloning test-Solutions"
-          git clone "https://x-access-token:${{ secrets.REPOSITORY_B_TOKEN }}@github.com/sopranp09/test1.git" temp
+          git clone "https://github.com/sopranp09/test1.git" temp
           echo "[LOG] Copying all cpp files to temp"
           cp -r * temp
           cd temp
