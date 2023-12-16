@@ -16,7 +16,7 @@ jobs:
 #      if : "contains(github.event.head_commit.message, '[test]')"
       run : |
           echo "[LOG] It contains [test], will update to other repo"
-          cd ./test
+          #cd ./test
           echo "[LOG] Cloning test-Solutions"
           git clone https://github.com/sopranp09/test1.git temp
           echo "[LOG] Copying all cpp files to temp"
