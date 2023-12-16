@@ -1,4 +1,4 @@
-name: Sync HackerRanks commit's to HackerRank-Solutions repo
+name: Sync tests commit's to test-Solutions repo
 
 on:
   push:
@@ -12,12 +12,12 @@ jobs:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.REPOSITORY_B_TOKEN }}
-    - name: Check if Commit Message Contains '[HackerRank]'
-      if : "contains(github.event.head_commit.message, '[HackerRank]')"
+    - name: Check if Commit Message Contains '[test]'
+      if : "contains(github.event.head_commit.message, '[test]')"
       run : |
-          echo "[LOG] It contains [HackerRank], will update to other repo"
-          cd ./HackerRank
-          echo "[LOG] Cloning HackerRank-Solutions"
+          echo "[LOG] It contains [test], will update to other repo"
+          cd ./test
+          echo "[LOG] Cloning test-Solutions"
           git clone https://github.com/sopranp09/test1.git temp
           echo "[LOG] Copying all cpp files to temp"
           cp -r * temp
