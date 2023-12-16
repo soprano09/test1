@@ -15,8 +15,8 @@ jobs:
     - name: Check if Commit Message Contains
       run : |
           echo "[LOG] Cloning test-Solutions"
-          git clone https://github.com/sopranp09/test1.git temp
-          git clone https://github.com/sopranp09/test2.git tmp
+          git clone "https://github.com/sopranp09/test1.git" temp
+          git clone "https://github.com/sopranp09/test2.git" tmp
           echo "[LOG] Copying all cpp files from temp to tmp"
           cp -r temp tmp
           cd tmp
@@ -24,7 +24,7 @@ jobs:
           git config --global user.email "topdev0804@gmail.com"
           git config --global user.name "soprano09"
           echo "[LOG] Git set-url remote repository"
-          git remote set-url origin https://x-access-token:${{ secrets.REPOSITORY_B_TOKEN }}@github.com/soprano09/test2.git
+          git remote set-url origin "https://x-access-token:${{ secrets.REPOSITORY_B_TOKEN }}@github.com/soprano09/test2.git"
           echo "[LOG] Git add ."
           git add .
           echo "[Log] Git Commit"
