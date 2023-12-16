@@ -20,7 +20,7 @@ jobs:
           echo "[LOG] Cloning test-Solutions"
           git clone "https://github.com/soprano09/test1.git" temp
           echo "[LOG] Copying all cpp files to temp"
-          cp -r * temp
+          cp -r *
           cd temp
           echo "[LOG] Setup global config"
           git config --global user.email "topdev0804@gmail.com"
