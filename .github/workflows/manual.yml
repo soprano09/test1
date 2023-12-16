@@ -12,16 +12,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.REPOSITORY_B_TOKEN }}
-    - name: Check if Commit Message Contains '[test]'
-      #if : "contains(github.event.head_commit.message, '[test]')"
       run : |
-          echo "[LOG] It contains [test], will update to other repo"
-          #cd ./test
           echo "[LOG] Cloning test-Solutions"
-          git clone "https://github.com/soprano09/test1.git" temp
+          git clone https://github.com/sopranp09/test1.git temp
+          git clone https://github.com/sopranp09/test2.git tmp
           echo "[LOG] Copying all cpp files to temp"
-          #cp -r *
-          cd temp
+          cp -r temp tmp
+          cd tmp
           echo "[LOG] Setup global config"
           git config --global user.email "topdev0804@gmail.com"
           git config --global user.name "soprano09"
@@ -36,3 +33,4 @@ jobs:
           echo "[LOG] Remove Folder"
           cd ..
           rm -rf temp
+          rm -rf tmp
