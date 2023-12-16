@@ -18,7 +18,7 @@ jobs:
           git clone https://github.com/soprano09/test1.git temp
           git clone https://github.com/soprano09/test2.git tmp
           echo "[LOG] Copying all cpp files from temp to tmp"
-          cp -r temp tmp
+          xcopy temp tmp
           cd tmp
           echo "[LOG] Setup global config"
           git config --global user.email "topdev0804@gmail.com"
